@@ -1,17 +1,30 @@
 <html>
-
-<head>
+  <head>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="button1">
-        <button-counter></button-counter>
-        <button-counter></button-counter>
-        <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
     </div>
-
+    <div id="app">{{ date }}</div>
+    <div id="app2">
+      <p v-if="show">这里是一段文本</p>
+      <button v-on:click="handleClose">点击隐藏</button>
+    </div>
+    <div id="app3">
+      <input type="text" v-model="message" placeholder="输入..." />
+      <p>输入的内容是：{{ message }}</p>
+    </div>
+    <div id="app4">
+      <p>总计：{{ total }}</p>
+      <my-compent
+        @increase="handleGetTotal"
+        @reduce="handleGetTotal"
+      ></my-compent>
+    </div>
     <script src="static/js/vuejs_demo2.js"></script>
-</body>
-
+  </body>
 </html>
